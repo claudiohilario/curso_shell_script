@@ -3,5 +3,5 @@
 ## Cabeçalho do Script
 `#!/usr/bin/env bash`
 
-## Adicionar permissão
+## Adicionar permissão de execução
 `chmod +x [nome_ficheiro]`
