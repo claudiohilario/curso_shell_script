@@ -15,3 +15,20 @@ echo "$TOTAL"; #25
 SAIDA_CAT="$(cat /etc/password | grep claudiohilario)"
 
 echo $SAIDA_CAT;
+
+echo "-------------------------------------------------";
+
+echo "Parâmetro 1: $1"
+echo "Parâmetro 2: $2"
+# Digitando ./variaveis.sh -a -b, $1 = -a e $2 = -b
+
+echo "Todos os parâmetros $*"
+#Digitando ./variaveis.sh -a -b -c, $* = -a -b -c
+
+echo "Quantos parâmetros? $#" #mostra o numero de parâmetros enviados.
+
+echo "Saída do último comando $?" # Por Default: 0- Está tudo OK 1- Ocorreu um problema.
+
+echo "PID: $$"
+
+echo $0 #nome do script
