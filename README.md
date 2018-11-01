@@ -4,4 +4,4 @@
 `#!/usr/bin/env bash`
 
 ## Adicionar permissão
-`chmod -x [nome_ficheiro]`
+`chmod +x [nome_ficheiro]`
