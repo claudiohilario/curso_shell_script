@@ -5,3 +5,5 @@
 
 ## Adicionar permissão de execução
 `chmod +x [nome_ficheiro]`
+## Ver versão bash
+`bash --version`
