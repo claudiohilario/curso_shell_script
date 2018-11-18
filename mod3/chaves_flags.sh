@@ -40,14 +40,20 @@ CHAVE_MAIUSCULO=0
 
 # ------------------------------- EXECUTION ------------------------------ #
 
-case "$1" in
-  -h) echo "$MENSAGEM_USO" && exit 0        ;;
-  -v) echo "$VERSAO" && exit 0              ;;
-  -s) CHAVE_ORDENA=1                        ;;
-  -m) CHAVE_MAIUSCULO=1                     ;;
-   *) echo $UTILIZADORES                    ;;
-esac
+while test -n "$1" 
+do
+  case "$1" in
+    -h) echo "$MENSAGEM_USO" && exit 0  ;;
+    -v) echo "$VERSAO" && exit 0        ;;
+    -s) CHAVE_ORDENA=1                  ;;
+    -m) CHAVE_MAIUSCULO=1               ;;
+    *) echo "Opção Inválida" && exit 1  ;;
+  esac
+  shift
+done
 
-[ $CHAVE_ORDENA -eq 1 ] && echo "$UTILIZADORES" | sort
-[ $CHAVE_MAIUSCULO -eq 1 ] && echo "$UTILIZADORES" | tr [a-z] [A-Z]
+[ $CHAVE_ORDENA -eq 1 ] && UTILIZADORES=$(echo "$UTILIZADORES" | sort)
+[ $CHAVE_MAIUSCULO -eq 1 ] && UTILIZADORES=$(echo "$UTILIZADORES" | tr [a-z] [A-Z])
+
+echo "$UTILIZADORES"
 # ------------------------------------------------------------------------ #
