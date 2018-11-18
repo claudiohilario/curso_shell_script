@@ -26,32 +26,28 @@
 # ------------------------------- VARIABLES ------------------------------ #
 UTILIZADORES="$(cat /etc/passwd | cut -d : -f 1)"
 MENSAGEM_USO="
-  $0 - [OPÇÕES]
+  $(basename  $0) - [OPÇÕES]
 
-  -h - Menu de Ajuda
-  -v - Versão
-  -s - Ordenar a saída
+    -h - Menu de Ajuda
+    -v - Versão
+    -s - Ordenar a saída
+    -m - Coloca em maiúsculo
 "
 VERSAO="v1.0.0"
-# ------------------------------------------------------------------------ #
-
-# ------------------------------- TESTS ---------------------------------- #
-
-# ------------------------------------------------------------------------ #
-
-# ------------------------------- FUNCTIONS ------------------------------ #
-
+CHAVE_ORDENA=0
+CHAVE_MAIUSCULO=0
 # ------------------------------------------------------------------------ #
 
 # ------------------------------- EXECUTION ------------------------------ #
-if [[ "$1" = "-h" ]]; then
-  echo "$MENSAGEM_USO" && exit 0
-fi
-if [[ "$1" = "-v" ]]; then
-  echo "$VERSAO" && exit 0
-fi
-if [[ "$1" = "-s" ]]; then
-  echo "$UTILIZADORES" | sort && exit 0
-fi
-echo "$UTILIZADORES"
+
+case "$1" in
+  -h) echo "$MENSAGEM_USO" && exit 0        ;;
+  -v) echo "$VERSAO" && exit 0              ;;
+  -s) CHAVE_ORDENA=1                        ;;
+  -m) CHAVE_MAIUSCULO=1                     ;;
+   *) echo $UTILIZADORES                    ;;
+esac
+
+[ $CHAVE_ORDENA -eq 1 ] && echo "$UTILIZADORES" | sort
+[ $CHAVE_MAIUSCULO -eq 1 ] && echo "$UTILIZADORES" | tr [a-z] [A-Z]
 # ------------------------------------------------------------------------ #
