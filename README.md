@@ -1,6 +1,8 @@
 # Shell Script
-## Útil Links
+## Util Links
 * [Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
+* [Figlet](http://www.figlet.org/)
+* [Tip colors and formatting](https://misc.flogisoft.com/bash/tip_colors_and_formatting)
 
 # Basic example
 [Good practices for writing shell scripts](http://www.yoone.eu/articles/2-good-practices-for-writing-shell-scripts.html)
