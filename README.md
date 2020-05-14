@@ -63,7 +63,7 @@ wrong_arg() {
 #
 #  Examples:
 #      $ ./scriptName.sh -v
-#  Adicionar exemplos práticos.
+#  Add practical examples.
 # ------------------------------------------------------------------------ #
 # Changelog:
 #
